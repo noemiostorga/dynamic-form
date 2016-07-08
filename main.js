@@ -10,15 +10,15 @@ $(document).ready(function(){
       if (field.type === 'text') {
         // htmlStr += '<label for="' + field.id + '">' + field.label + '</label><input type="text" id="' + field.id + '" /><i class="fa ' + field.icon + '"></i>';
         htmlStr += `
-          <label for="${field.id}">${field.label}</label>
-          <input type="text" id="${field.id}" />
+          <label class="firstname" for="${field.id}">${field.label}</label>
+          <input class="textinput" type="text" id="${field.id}" />
           <i class="fa ${field.icon}"></i>
         `;
       }
   
       if(field.type === 'email'){
       	htmlStr += `
-      		<label for="${field.id}">${field.label}</label>
+      		<label class="email" for="${field.id}">${field.label}</label>
       		<input type="email" id="${field.id}" />
       		<i class="fa ${field.icon}"></i>
 
@@ -29,14 +29,31 @@ $(document).ready(function(){
       	htmlStr += `
       		<label for="${field.id}">${field.label}</label>
       		<select type="select" id="${field.id}" >
-      			<option value="${field.value}">${field.options.label}</option>
+      			<option value="${field.options[0].label}">${field.options[0].label}</option>
+            
       		</select> 
       		<i class="fa ${field.icon}"></i>
 
       	`
       }
 
-      if(field.type === )
+      if(field.type === 'textarea'){
+        htmlStr +=`
+          <label for="${field.id}">${field.label}</label>
+          <textarea id="${field.id}"></textarea>
+          <i class="fa ${field.icon}"></i>
+        `;
+      }
+
+       if(field.type === 'tel'){
+         htmlStr += `
+          <label for="${field.id}">${field.label}</label>
+          <input  type="tel" id="${field.id}" />
+          <i class="fa ${field.icon}"></i>
+        `;
+     }
+
+    
 
 
     });
