@@ -1,8 +1,25 @@
-.textinput{
+
+
+.form-container{
+	width: 40%;
+	margin: 0 auto;
+
+}
+
+.header{
+	background: blue;
+	width: 100%;
+	color: white;
+}
+
+input{
+	display:block;
+}
+
+textarea{
 	display: block;
 }
 
-.email{
+select{
 	display: block;
-	float: left;
 }
